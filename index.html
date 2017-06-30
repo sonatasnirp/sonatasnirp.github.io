@@ -1,10 +1,701 @@
-<html>
+
+
+
 <!DOCTYPE html>
-<header>
-<link rel="stylesheet" type="text/css" href="css/main.css">
-</header>
-<body>
-<script src="javascript/css.js"></script>
-<div class="bg-move-hover"></div>
-</body>
+<head>
+	<title>Hello | Bert</title>
+
+	<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="From our inspiring birds nest in Enschede, we provide customers with top notch design and cutting edge technology.">
+		
+	<meta property="og:type" content="Website">
+	<meta property="og:title" content="branding, design and development | Bert">
+	<meta property="og:description" content="From our inspiring birds nest in Enschede, we provide customers with top notch design and cutting edge technology.">
+	<meta property="og:url" content="https://bert.house/en/">
+	<meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/wearebert.png">
+
+	<meta property="og:site_name" content="Bert">
+	
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://bert.house/en/">
+	<meta name="twitter:title" content="branding, design and development | Bert">
+	<meta name="twitter:description" content="From our inspiring birds nest in Enschede, we provide customers with top notch design and cutting edge technology.">
+	<meta name="twitter:creator" content="@bertnest">
+	<meta name="twitter:image" content="https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/wearebert.png">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+	<!-- Adobe Typekit -->
+	<script type="text/javascript" src="https://use.typekit.net/ali4ccc.js"></script>
+	<script type="text/javascript">try{Typekit.load({ async: false });}catch(e){}</script>
+
+	<!-- Vendor Styles -->
+	<link rel="stylesheet" href="/vendor/video-player/video-js.css" />
+	<link rel="stylesheet" href="/vendor/dropdown/dropdown.css" />
+
+	<!-- App Styles -->
+	<link rel="stylesheet" href="/styles/app.css?timestamp=20170107" />
+
+	<script src="/scripts/modernizr.js"></script>
+</head>
+
+<body class="loading">
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TGX5JZ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TGX5JZ');</script>
+	<!-- End Google Tag Manager -->
+
+	
+<div class="loader-wrap">
+    <img src="/images/bert_loader.gif" class="loader" alt="loading">
+</div>
+
+    <div class="wrapper">
+
+    		
+    
+    
+	<header class="header ">
+		<button class="btn-menu js-toggle-menu">
+			<span class="lines">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+
+			<span class="text">Menu</span>
+		</button>
+
+		<a href="https://bert.house/en/" class="logo logo-page logo-green-text">Bert</a>
+		<div class="logo logo-menu logo-black-white"></div>
+
+		
+						
+
+						
+
+	<div class="nav-secondary">
+		<ul class="nav-secondary-list">
+			<li class="nav-secondary-item nav-bert-video">
+				<button class="js-stop-video">
+					<i class="icon icon-close-white"></i>
+					<i class="icon icon-close-dark alt"></i>
+				</button>
+
+				<button class="js-play-video">
+					<i class="icon icon-play"></i>
+					<i class="icon icon-play-black alt"></i>
+				</button>
+			</li>
+
+			<li class="nav-secondary-item">
+				<button class="js-toggle-share">
+					<i class="icon icon-share"></i>
+					<i class="icon icon-share-black alt"></i>
+				</button>
+			</li>
+
+			<li class="nav-secondary-item">
+				<button class="js-toggle-language">
+					<div class="nav-secondary-icon-wrap">
+						<i class="icon icon-globe-green"></i>
+						<i class="icon icon-globe-black alt"></i>
+					</div>
+					<div class="nav-secondary-label">EN</div>
+				</button>
+			</li>
+		</ul>
+    </div>
+
+	</header>
+    
+    <div class="navigation-overlay">
+        <div class="navigation-wrap">
+            <div class="svg-background"
+                data-morph-open="M273,273c0,0-55.8-23-123-23c-78.2,0-123,23-123,23s23-37.7,23-123C50,79.936,27,27,27,27s46,23,124,23c85,0,122-23,122-23s-23,38.43-23,123C250,229.646,273,273,273,273z"
+                data-morph-close="M273,273c0,0-55.8,24-123,24c-78.2,0-123-24-123-24S3,235.3,3,150C3,79.936,27,27,27,27S72,3,150,3 c85,0,123,24,123,24s24,38.43,24,123C297,229.646,273,273,273,273z">
+
+                <svg width="100%" height="100%" viewBox="0 0 300 300" preserveAspectRatio="none">
+                    <path d="M273,273c0,0-55.8,0-123,0c-78.2,0-123,0-123,0s0-37.7,0-123c0-70.064,0-123,0-123s45,0,123,0c85,0,123,0,123,0s0,38.43,0,123C273,229.646,273,273,273,273z"></path>
+                </svg>
+            </div>
+            <nav class="nav">
+                <ul>
+				
+																														
+					<li>
+					    <a id="menu-home" href="https://bert.house/en/">Home
+                        <div class="splashes">
+                            <i class="b-1"></i>
+                            <i class="b-2"></i>
+                            <i class="b-3"></i>
+
+                            <i class="w-1"></i>
+                            <i class="w-2"></i>
+                            <i class="w-3"></i>
+
+                        </div>
+                        </a>
+					    					</li>
+				
+																														
+					<li>
+					    <a id="menu-cases" href="https://bert.house/en/cases">Cases
+                        <div class="splashes">
+                            <i class="b-1"></i>
+                            <i class="b-2"></i>
+                            <i class="b-3"></i>
+
+                            <i class="w-1"></i>
+                            <i class="w-2"></i>
+                            <i class="w-3"></i>
+
+                        </div>
+                        </a>
+					    					</li>
+				
+																														
+					<li>
+					    <a id="menu-about" href="https://bert.house/en/about">About
+                        <div class="splashes">
+                            <i class="b-1"></i>
+                            <i class="b-2"></i>
+                            <i class="b-3"></i>
+
+                            <i class="w-1"></i>
+                            <i class="w-2"></i>
+                            <i class="w-3"></i>
+
+                        </div>
+                        </a>
+					    					</li>
+				
+																														
+					<li>
+					    <a id="menu-services" href="https://bert.house/en/services">Services
+                        <div class="splashes">
+                            <i class="b-1"></i>
+                            <i class="b-2"></i>
+                            <i class="b-3"></i>
+
+                            <i class="w-1"></i>
+                            <i class="w-2"></i>
+                            <i class="w-3"></i>
+
+                        </div>
+                        </a>
+					    					</li>
+				
+																														
+					<li>
+					    <a id="menu-contact-1" href="https://bert.house/en/contact">Contact
+                        <div class="splashes">
+                            <i class="b-1"></i>
+                            <i class="b-2"></i>
+                            <i class="b-3"></i>
+
+                            <i class="w-1"></i>
+                            <i class="w-2"></i>
+                            <i class="w-3"></i>
+
+                        </div>
+                        </a>
+					    					</li>
+				                </ul>
+            </nav><!-- /.nav -->
+
+            <div class="contacts">
+                <p class="mobile-hidden">HQ</p>
+
+                <address>
+                    <span>Roomweg 63</span>
+
+                    <span>7523 BL Enschede</span>
+
+                    <span>The Netherlands</span>
+                    <span>+31 (0)53 76 35 210</span>
+                </address>
+
+                <ul class="list-cities">
+                    <li>
+                        <span>Enschede</span>
+                    </li>
+
+                    <li>
+                        <span>Amsterdam</span>
+                    </li>
+
+                    <li>
+                        <span>London</span>
+                    </li>
+                </ul>
+            </div><!-- /.contacts -->
+        </div>
+    </div><!-- /.navigation -->
+    
+	<div class="language-dropdown">
+        <button class="language-dropdown-close js-toggle-language"><i class="icon icon-close"></i></button>
+		<h4>Select your language</h4>
+
+		<ul class="language-dropdown-list">
+	        
+				        	            
+        		        		
+	            	                
+	                	                    	                
+	                	                			                			                			                	
+	                <li class="language-item active">
+	                    <a href="https://bert.house/en/">
+		                	<i class="icon icon-english-green active"></i>
+		                	<i class="icon icon-english-white inactive"></i>
+		                    <h6>English</h6>
+		                </a>
+	                </li>
+	            
+	        	            
+        		        		
+	            	                
+	                	                    	                
+	                	                			                										                
+	                <li class="language-item">
+	                    <a href="https://bert.house/nl/">
+		                	<i class="icon icon-dutch-green active"></i>
+		                	<i class="icon icon-dutch-white inactive"></i>
+		                    <h6>Nederlands</h6>
+		                </a>
+	                </li>
+	            
+	        				    </ul>
+
+	</div>
+    
+    <div class="share-dropdown">
+        <span class="share-dropdown-title">
+            Share Bert
+        </span>
+        <ul class="share-dropdown-list">
+            <li class="share-dropdown-item share-dropdown-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbert.house%2Fen%2F"></a></li>
+            <li class="share-dropdown-item share-dropdown-twitter"><a href="https://twitter.com/share?url=https%3A%2F%2Fbert.house%2Fen%2F&text=branding%2C%20design%20and%20development%20%7C%20Bert"></a></li>
+            <li class="share-dropdown-item share-dropdown-linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbert.house%2Fen%2F&title=branding%2C%20design%20and%20development%20%7C%20Bert&summary=From%20our%20inspiring%20birds%20nest%20in%20Enschede%2C%20we%20provide%20customers%20with%20top%20notch%20design%20and%20cutting%20edge%20technology."></a></li>
+        </ul>
+        <button class="share-dropdown-close js-toggle-share">
+            <i class="icon icon-close-white"></i>
+        </button>
+    </div>
+    
+    <div class="video-overlay">
+        <video id="video" class="js-bert-video video-js vjs-default-skin full-screen" controls loop width="640" height="360">
+            <source src="/video/Bert_website.mp4"></source>
+            <source src="/video/Bert_website.webm"></source>
+        </video>
+    </div>
+
+	
+    <div class="page">
+    	<div class="intro intro-home js-parallax">
+			<ul id="intro-parallax">
+				<li class="layer" data-depth="0.3"><div></div></li>
+			</ul>
+    		<div class="intro-inner">
+    			<h1 class="home">Hello</h1>
+
+    			<h6><p>A superb bird-of-paradise. Creative, functional and alluring. From our inspiring bird’s nest in Enschede, our creative specialists work on an international level at branding, design and development. Both online and offline.</p></h6>
+
+    			<button id="home-play-video" class="btn play-video-btn js-play-video-intro">Play Video</button>
+    		</div>
+
+
+		        	<a href="#case-1" class="scroll-suggest js-scroll-to">
+    			<span class="icon icon-mouse"><span><i></i><i></i></span></span>
+    			<span class="icon icon-swipe"></span>
+    		</a>
+    	
+    	</div>
+
+		
+                                        
+                                        
+            
+			<section class="case-homepage" id="case-1">
+	<style>
+					#case-1 {
+				background: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitSmall/heineken_bg.jpg) 50% 50% no-repeat #000000;
+				background-size: cover;
+			}
+							@media (min-width: 481px) {
+					#case-1 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitMedium/heineken_bg.jpg)
+					}
+				}
+				@media (min-width: 801px) {
+					#case-1 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitLarge/heineken_bg.jpg)
+					}
+				}
+			
+			@media (min-width: 1601px) {
+				#case-1 {
+					background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitXlarge/heineken_bg.jpg)
+				}
+			}
+		
+		#case-1 .case-homepage-props {
+			background:		}
+
+		@media (min-width: 481px) {
+			#case-1 .case-homepage-props {
+				background-size:			}
+		}
+
+		@media (min-width: 961px) {
+			#case-1 .case-homepage-props {
+				background-image:			}
+		}
+
+		@media (min-width: 1601px) {
+			#case-1 .case-homepage-props {
+				background-image:			}
+		}
+	</style>
+	<div class="case-homepage-props"></div>
+	<div class="case-homepage-content">
+							<img src="https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/heineken_logo.png" class="case-homepage-logo">
+							<a href="https://bert.house/en/cases/heineken" class="btn btn-case">VIEW CASE</a>
+			</div>
+	<a href="#case-2" class="scroll-suggest js-scroll-to">
+		<span class="icon icon-mouse"><span><i></i><i></i></span></span>
+		<span class="icon icon-swipe"></span>
+	</a>
+</section>
+
+		
+                                        
+                                        
+            
+			<section class="case-homepage" id="case-2">
+	<style>
+					#case-2 {
+				background: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitSmall/home-case-blue-mountain.jpg) 50% 50% no-repeat #000000;
+				background-size: cover;
+			}
+							@media (min-width: 481px) {
+					#case-2 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitMedium/home-case-blue-mountain.jpg)
+					}
+				}
+				@media (min-width: 801px) {
+					#case-2 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitLarge/home-case-blue-mountain.jpg)
+					}
+				}
+			
+			@media (min-width: 1601px) {
+				#case-2 {
+					background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitXlarge/home-case-blue-mountain.jpg)
+				}
+			}
+		
+		#case-2 .case-homepage-props {
+			background:		}
+
+		@media (min-width: 481px) {
+			#case-2 .case-homepage-props {
+				background-size:			}
+		}
+
+		@media (min-width: 961px) {
+			#case-2 .case-homepage-props {
+				background-image:			}
+		}
+
+		@media (min-width: 1601px) {
+			#case-2 .case-homepage-props {
+				background-image:			}
+		}
+	</style>
+	<div class="case-homepage-props"></div>
+	<div class="case-homepage-content">
+							<img src="https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/bluemountain_logo.png" class="case-homepage-logo">
+							<a href="https://bert.house/en/cases/blue-mountain" class="btn btn-case">VIEW CASE</a>
+			</div>
+	<a href="#case-3" class="scroll-suggest js-scroll-to">
+		<span class="icon icon-mouse"><span><i></i><i></i></span></span>
+		<span class="icon icon-swipe"></span>
+	</a>
+</section>
+
+		
+                                        
+                                        
+            
+			<section class="case-homepage" id="case-3">
+	<style>
+					#case-3 {
+				background: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitSmall/blok63_homepage.jpg) 50% 50% no-repeat #000000;
+				background-size: cover;
+			}
+							@media (min-width: 481px) {
+					#case-3 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitMedium/blok63_homepage.jpg)
+					}
+				}
+				@media (min-width: 801px) {
+					#case-3 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitLarge/blok63_homepage.jpg)
+					}
+				}
+			
+			@media (min-width: 1601px) {
+				#case-3 {
+					background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitXlarge/blok63_homepage.jpg)
+				}
+			}
+		
+		#case-3 .case-homepage-props {
+			background:		}
+
+		@media (min-width: 481px) {
+			#case-3 .case-homepage-props {
+				background-size:			}
+		}
+
+		@media (min-width: 961px) {
+			#case-3 .case-homepage-props {
+				background-image:			}
+		}
+
+		@media (min-width: 1601px) {
+			#case-3 .case-homepage-props {
+				background-image:			}
+		}
+	</style>
+	<div class="case-homepage-props"></div>
+	<div class="case-homepage-content">
+							<img src="https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/blok63_logo.png" class="case-homepage-logo">
+							<a href="https://bert.house/en/cases/blok-63" class="btn btn-case">VIEW CASE</a>
+			</div>
+	<a href="#case-4" class="scroll-suggest js-scroll-to">
+		<span class="icon icon-mouse"><span><i></i><i></i></span></span>
+		<span class="icon icon-swipe"></span>
+	</a>
+</section>
+
+		
+                                        
+                                        
+            
+			<section class="case-homepage" id="case-4">
+	<style>
+					#case-4 {
+				background: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitSmall/kaboodle_home.jpg) 50% 50% no-repeat #23252a;
+				background-size: cover;
+			}
+							@media (min-width: 481px) {
+					#case-4 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitMedium/kaboodle_home.jpg)
+					}
+				}
+				@media (min-width: 801px) {
+					#case-4 {
+						background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitLarge/kaboodle_home.jpg)
+					}
+				}
+			
+			@media (min-width: 1601px) {
+				#case-4 {
+					background-image: url(https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/_fitXlarge/kaboodle_home.jpg)
+				}
+			}
+		
+		#case-4 .case-homepage-props {
+			background:		}
+
+		@media (min-width: 481px) {
+			#case-4 .case-homepage-props {
+				background-size:			}
+		}
+
+		@media (min-width: 961px) {
+			#case-4 .case-homepage-props {
+				background-image:			}
+		}
+
+		@media (min-width: 1601px) {
+			#case-4 .case-homepage-props {
+				background-image:			}
+		}
+	</style>
+	<div class="case-homepage-props"></div>
+	<div class="case-homepage-content">
+							<img src="https://s3-eu-west-1.amazonaws.com/assets.bert.house/cases/kaboodle_home_logo_161031_142713.png" class="case-homepage-logo">
+							<a href="https://bert.house/en/cases/kaboodle" class="btn btn-case">VIEW CASE</a>
+			</div>
+	<a href="#contact-us" class="scroll-suggest js-scroll-to">
+		<span class="icon icon-mouse"><span><i></i><i></i></span></span>
+		<span class="icon icon-swipe"></span>
+	</a>
+</section>
+
+		
+    		<section class="section section-contacts" id="contact-us">
+		<div class="shell">
+			<header class="section-head">
+				<h3 class="section-title">CONTACT US</h3><!-- /.section-title -->
+			</header><!-- /.section-head -->
+
+			<div class="section-body">
+			<p>Let’s go on an adventure together! Are you interested in a collaboration, partnership or do you just want to come by and say hello?</p>
+
+				<a id="footer-contact" href="https://bert.house/en/contact" class="btn">CONTACT</a>
+
+				<div class="subscribe mobile-hidden">
+
+					<form action="//house.us12.list-manage.com/subscribe/post?u=0d02b10dfb76e8f6ba6791b61&amp;id=fa07c5ada3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						<label>SIGN UP FOR OUR NEWSLETTER</label>
+
+						<div class="form-cols">
+							<div class="form-col form-col-1of4">
+								<input type="text" class="field" value="" name="FNAME" id="mce-FNAME"  placeholder="First Name" />
+							</div>
+							<!--<div class="form-col form-col-1of4">
+								<input type="text" value="" name="LNAME" class="field" id="mce-LNAME" placeholder="Last Name" />
+							</div>-->
+							<div class="form-col form-col-2of4">
+								<input type="email" value="" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="E-mail address" />
+							</div><!-- /.form-col form-col-2of4 -->
+
+							<div class="form-col form-col-size1">
+								<input type="submit" value="SIGN UP" name="subscribe" id="mc-embedded-subscribe" class="btn btn-block">
+							</div><!-- /.form-col form-col-1of4 -->
+						</div><!-- /.form-cols -->
+					</form>
+
+				</div><!-- /.subscribe -->
+			</div><!-- /.section-body -->
+		</div><!-- /.shell -->
+	</section><!-- /.section-contacts -->
+    	
+	<footer class="footer">
+		<div class="shell">
+			<div class="footer-cols">
+												<div class="footer-col footer-col-2of5">
+					<div class="contacts">
+						<h6>Enschede HQ</h6>
+
+						<address>Roomweg 63</address>
+						<address>7523 BL, Enschede</address>
+
+						<p><a href="tel:+31 (0)53 76 35 210">+31 (0)53 76 35 210</a></p>
+
+						<a href="mailto:hello@bert.house">hello@bert.house</a>
+					</div>
+				</div>
+								<div class="footer-col footer-col-2of5">
+					<div class="contacts">
+						<h6>Amsterdam</h6>
+
+						<address>Johan Huizingalaan 763A</address>
+						<address>1066 VH, Amsterdam</address>
+
+						<p><a href="tel:+31 (0)20 22 99 870">+31 (0)20 22 99 870</a></p>
+
+						<a href="mailto:amsterdam@bert.house">amsterdam@bert.house</a>
+					</div>
+				</div>
+								<div class="footer-col footer-col-size1">
+					<div class="contacts">
+						<h6>London</h6>
+
+						<address>13 Hawley Crescent</address>
+						<address>NW1 8NP, London</address>
+
+						<p><a href="tel:+44(0) 20 384 108 02">+44(0) 20 384 108 02</a></p>
+
+						<a href="mailto:london@bert.house">london@bert.house</a>
+					</div>
+				</div>
+												<div class="footer-col footer-col-1of5">
+					<h6>Social</h6>
+
+					<div class="socials">
+						<ul>
+														<li>
+								<a id="footer-instagram" href="https://www.instagram.com/bert.house">
+									<i class="social-icon social-icon-instagram"></i>
+								</a>
+							</li>
+							
+														<li>
+								<a id="footer-facebook" href="https://www.facebook.com/superbbertofparadise">
+									<i class="social-icon social-icon-facebook"></i>
+								</a>
+							</li>
+							
+														<li>
+								<a id="footer-linkedin" href="https://www.linkedin.com/company/bert-bv">
+									<i class="social-icon social-icon-linkedin"></i>
+								</a>
+							</li>
+							
+														<li>
+								<a id="footer-vimeo" href="http://vimeo.com/bertshow">
+									<i class="social-icon social-icon-vimeo"></i>
+								</a>
+							</li>
+							
+														<li>
+								<a id="footer-twitter" href="https://twitter.com/bertnest">
+									<i class="social-icon social-icon-twitter"></i>
+								</a>
+							</li>
+													</ul>
+					</div><!-- /.socials -->
+				</div><!-- /.footer-col footer-col-1of5 -->
+			</div><!-- /.footer-cols -->
+		</div><!-- /.shell -->
+
+		<div class="footer-inner">
+			<a href="#" class="footer-logo">Bert</a>
+
+			<p>More work from our designers</p>
+
+			<div class="socials socials-alt">
+				<ul>
+										<li>
+						<a id="footer-dribble" href="https://dribbble.com/berthouse">
+							<i class="social-icon social-icon-dribbble"></i>
+						</a>
+					</li>
+					
+										<li>
+						<a id="footer-behance" href="https://www.behance.net/berthouse">
+							<i class="social-icon social-icon-behance"></i>
+						</a>
+					</li>
+									</ul>
+			</div><!-- /.socials -->
+		</div><!-- /.footer-inner -->
+	</footer><!-- /.footer -->
+
+    </div>
+
+	</div>
+
+	<script src="/vendor/parallax.js"></script>
+
+    
+
+    <!-- <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script> -->
+    <!-- <script type="text/javascript">stLight.options({publisher: "18abc05a-9598-4662-80de-93af44f4b22a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script> -->
+
+    <!-- App JS -->
+    <script src="/scripts/app.js?timestamp=20170107"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c3340453a8","applicationID":"13732355","transactionName":"NQcBZUUFDRdZVERRDAxNIlJDDQwKF3RCWQUWPjdUWhQPBUxSQ3sMDBYRXlsIBhYXRVVWBwcQ","queueTime":0,"applicationTime":299,"atts":"GUACEw0fHhk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
