@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Abel|Anton');
 
-$font-title: Anton, sans-serif;
-$font-small: Abel, sans-serif;
 
 // Global styles
 html, body {
@@ -12,38 +9,6 @@ html, body {
   text-align: center;
 }
 
-h1 {
-  font-family: $font-title;
-  font-size: 4rem;
-  color: white;
-  margin: 0;
-  padding: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  z-index: 9;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-50%,0);
-  
-  &.shadow {
-  text-shadow: 0 -3px 0 #999,
-    0 6px 8px rgba(0,0,0,.4),
-    0 9px 10px rgba(0,0,0,.15),
-    0 30px 10px rgba(0,0,0,.18),
-    0 15px 10px rgba(0,0,0,.21);
-
-  }
-  
-  small {
-    font-family: $font-small;
-    display: block;
-    font-size: 65%;
-  }
-  
-}
-
-// Background styles
 .bg-move-hover {
   width: 110%;
   height: 110%;
