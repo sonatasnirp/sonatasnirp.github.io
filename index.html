@@ -196,6 +196,96 @@ a {
   transition-delay: 1s;
 }
 
+  
+  
+  
+  
+  
+  .wrapper {
+	width: 40%;
+	margin: 40px auto;
+}
+
+div.gallery {
+	margin-top: 30px;
+}
+
+div.gallery ol {
+	list-style-type: none;
+	margin-left: 35px;
+}
+
+/* animation */
+div.gallery ol li, div.gallery li img {
+	-webkit-transition: all 0.1s ease-in-out;
+  	-moz-transition: all 0.1s ease-in-out;
+  	-o-transition: all 0.1s ease-in-out;
+  	transition: all 0.1s ease-in-out;
+}
+
+div.gallery ol li {
+	position: relative;
+	float: left;
+	width: 130px;
+	height: 130px;
+	margin: 5px;
+	padding: 5px;
+	z-index: 0;
+}
+
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.gallery ol li:hover {
+	z-index: 5;
+}
+
+/* Image is position nicely under li */
+div.gallery ol li img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #dddddd;
+	padding: 5px;
+	width: 130px;
+	height: 130px;
+	background: #f0f0f0;
+}
+
+div.gallery ol li img:hover {
+	width: 200px;
+	height: 200px;
+	margin-top: -130px;
+	margin-left: -130px;
+	top: 65%;
+	left: 65%;
+}
+
+p.attribution {
+	font-family: 'Consolas';
+	color: #000;
+	clear: both;
+	text-align: center;
+	line-height: 25px;
+	padding-top: 30px;
+}
+
+p.attribution a {
+	color: #4c8d7c;
+}
+
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+	.wrapper {
+		width: 500px;
+	}
+}
+  
+  
+  
+  
+  
+  
+  
 </style></head><body>
 <div class="ct" id="t1">
   <div class="ct" id="t2">
@@ -213,7 +303,28 @@ a {
              <section class="icon fa fa-bolt"><span class="title">Bolt</span><span class="hint">Like this pen to see the magic!...<br> Just kidding, it won't happen anything but I'll be really happy If you do so.</span></section>  
           </div>
           <div class="page" id="p2">
-            <section class="icon fa fa-keyboard-o"><span class="title">Type</span></section>
+           <!-- <section class="icon fa fa-keyboard-o"><span class="title">Type</span></section>-->
+            
+               <section class="wrapper">
+		<div class="gallery">
+			<ol>
+				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/9.png"></li>
+				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/2.png"></li>
+				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/3.png"></li>
+        
+        
+        
+        <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/7.png"></li>
+				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/8.png"></li>
+				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/6.png"></li>
+			</ol>
+		</div>       
+               
+               
+                 
+            
+            
+            
           </div>  
           <div class="page" id="p3">
             <section class="icon fa fa-rocket"><span class="title">Rocket</span></section>
