@@ -318,10 +318,16 @@ min-height: 100%;
   
 </style></head><body>
 <body onload="myFunction()" style="margin:0;">
-	<div id="loader"><div class="ct" id="t1"></div></div>
+	<div id='dim_wrapper' style='width:100%; height:100%; background:#000; z-index:10'><div id="loader"></div></div>
+<script>
+$("#dim_wrapper").animate({
+    'opacity':0.5
+});
+</script>
+	
 
 	
-<!--<div class="ct" id="t1">-->
+	<div class="ct" id="t1">
   <div class="ct" id="t2">
     <div class="ct" id="t3">
       <div class="ct" id="t4">
