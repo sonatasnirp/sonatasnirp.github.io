@@ -1,150 +1,87 @@
-# Variables
-canvas = document.getElementById('canvas');
-ctx = canvas.getContext('2d');
-width = canvas.width = window.innerWidth;
-height = canvas.height = window.innerHeight;
-imgSrc = canvas.dataset.image;
-img = new Image();
-useGrid = true
-imgInfo = {};
-imgs = [];
-grids = [];
-magnet = 2000;
-mouse = {
-	x:1
-	y:0
+var html = "<head><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\"</head><div id=\"social-container\"><a title=\"What's this?\" href=\"https://codepen.io/woodwork/pen/rxdLyW\" target=\"_blank\" id=\"tooltip\"><span class=\"fa fa-info-circle\" id=\"info\" title=\"\"></span></a><div id=\"social-links\"></div><p id=\"social-message\"></p></div>";
+
+var style = " #social-container { color: rgba(0, 0, 0, 0.7); display: block; position: fixed; z-index: 9999; bottom: 16px; right: 16px; text-align: right; } #social-message { padding: 0 8px 0 0; margin: 6px 0; } #social-container a { color: rgba(0, 0, 0, 0.6); letter-spacing: 8px; font-size: 36px; text-decoration: none; -webkit-transition: all 0.2s; transition: all 0.2s; } #social-container a:hover { color: rgba(0, 0, 0, 0.9); }
+#social-container #info { font-size: 14px; -webkit-transform: translate(12px, 4px); 
+transform: translate(12px, 4px); } #social-container #tooltip:hover:after { box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+letter-spacing: 0; background: #222; font-size: 14px; border-radius: 5px; color: rgba(255, 255, 255, 0.65); padding: 5px;
+position: absolute; width: 100px; z-index: 10; right: 15px; top: 20px; content: attr(title); } 
+#social-container #tooltip:hover:before { border: solid; border-color: transparent #222; 
+border-width: 6px 0 6px 6px; content: \"\"; right: 9px; top: 25px; position: absolute; z-index: 10; }
+#social-container.top { top: 0px; right: 16px; } #social-container.light,
+#social-container.light a { color: rgba(255, 255, 255, 0.6); -webkit-transition: all 0.2s; transition: all 0.2s; }
+#social-container.light a:hover { color: rgba(255, 255, 255, 0.9); } #social-container.disco a:active,
+#social-container.disco a:visited, #social-container.disco a:link { -webkit-animation: none; animation: none; }
+#social-container.disco a:hover { text-shadow: 0 0 20px rgba(0, 222, 248, 0.3); 
+	-webkit-animation: disco 2s linear infinite; animation: disco 2s linear infinite; } @-webkit-keyframes disco
+	{ 0%, 50% { color: #2FFF90; } 40%, 90% { color: #00DEF8; } 20%, 70% { color: #F7F445; } 30%, 80% { color: #FC7800; } 
+		   10%, 60% { color: #FF0042; } 100% { color: #B400FF; } } @keyframes disco { 0%, 50% { color: #2FFF90; } 40%, 90% 
+		   { color: #00DEF8; } 20%, 70% { color: #F7F445; } 30%, 80% { color: #FC7800; } 10%, 60% { color: #FF0042; } 100% { color: #B400FF; } }";
+
+function determine(currLink, linksContainer) {
+  var site = currLink[0].toLowerCase();
+  var user = currLink[1]
+  switch (site) {
+    case "twitter":
+    case "dribbble":
+    case "instagram":
+    case "github":
+      link = "<a href='https://" + site + ".com/" + user + "/' target='_blank' class='fa fa-" + site + "'></a>";
+      linksContainer.innerHTML = linksContainer.innerHTML + link;
+      break;
+    case "codepen":
+      link = "<a href='https://codepen.io/" + user + "/' target='_blank' class='fa fa-codepen'></a>";
+      linksContainer.innerHTML = linksContainer.innerHTML + link;
+      break;
+    case "facebook":
+      link = "<a href='https://facebook.com/" + user + "/' target='_blank' class='fa fa-facebook-square'></a>";
+      linksContainer.innerHTML = linksContainer.innerHTML + link;
+      break;
+    case "linkedin":
+      link = "<a href='https://www.linkedin.com/in/" + user + "/' target='_blank' class='fa fa-linkedin-square'></a>";
+      linksContainer.innerHTML = linksContainer.innerHTML + link;
+      break;
+    case "":
+      link = "<a href='http://" + user + "' target='_blank' class='fa fa-globe'></a>";
+      linksContainer.innerHTML = linksContainer.innerHTML + link;
+      break;
+
+    default:
+      alert("Social Links Plugin: Sorry, '" + site + "'" + " wasn't recognised, please check your spelling or request a site to be added.");
+  }
 }
 
-init = ()->
-	addListeners();
-	
-	img.onload = (e)->
-		# Check for firefox. 
-		imgInfo.width = if e.path then e.path[0].width else e.target.width
-		imgInfo.height = if e.path then e.path[0].height else e.target.height 
-			
-		numberToShow = (Math.ceil(window.innerWidth / imgInfo.width)) * (Math.ceil(window.innerHeight / imgInfo.height))
-		
-		createGrid() if useGrid;
-		populateCanvas(numberToShow * 4);
-		
-		# Image is ready and we're ready to go
-		canvas.classList.add('ready');
-		render();
-		
-	img.src = imgSrc;
-	
-addListeners = ()->
-	window.addEventListener('resize',resizeCanvas);
-	window.addEventListener('mousemove', updateMouse);
-	window.addEventListener('touchmove', updateMouse);
-	
-updateMouse = (e)->
+social = function() {
+  var _style = document.createElement("style");
+  var _html = document.createElement("div");
+  _style.innerHTML = style;
+  _html.innerHTML = html;
+  document.body.appendChild(_style);
+  document.body.appendChild(_html);
+  
+  var link = '';
+  var links = document.getElementById('social-links'),
+    socialContainer = document.getElementById('social-container'),
+    message = document.getElementById('social-message');
 
-	mouse.x = e.clientX
-	mouse.y = e.clientY
-	
-resizeCanvas = ()->
-	width = canvas.width = window.innerWidth;
-	height = canvas.height = window.innerHeight;
-	
-# Magic
-populateCanvas = (nb)->
-	i = 0;
-	while i <= nb
-		p = new Photo();
-		imgs.push p
-		i++;
-	
-createGrid = ()->
-	imgScale = 0.5
-	grid = {
-		row: Math.ceil(window.innerWidth / (imgInfo.width * imgScale))
-		cols: Math.ceil(window.innerHeight / (imgInfo.height * imgScale))
-		rowWidth: imgInfo.width * imgScale
-		colHeight: imgInfo.height * imgScale
-	}
-	
-	for r in [0...grid.row]
-		x = r * grid.rowWidth
-		for c in [0...grid.cols]
-			y = c * grid.colHeight
-			
-			item = new gridItem(x,y,grid.rowWidth,grid.colHeight)
-			grids.push item;
-			
-	for i in [0...grids.length]
-		grids[i].draw();
-	
-gridItem = (x = 0, y = 0, w, h)->
-	this.draw = ()->
-		ctx.drawImage(img, x, y, w, h);
-		return
-	return
+  for (var i = 0; i < arguments.length; i++) {
+    var argument = arguments[i];
 
-Photo = ()->
-	seed = Math.random() * (2.5 - 0.7) + 0.7;
-	w = imgInfo.width / seed
-	h = imgInfo.height / seed
-	x = window.innerWidth * Math.random()
-	finalX = x
-	y = window.innerHeight * Math.random()
-	finalY = y	
-	console.log("INIT Y :: #{finalY} || INIT X :: #{finalX}")
-	r = Math.random() * (180 - (-180)) + (-180)
-	
-	forceX = 0
-	forceY = 0
-	
-	TO_RADIANS = Math.PI/180
-	
-	this.update = ()->
-		x0 = x
-		y0 = y
-		x1 = mouse.x
-		y1 = mouse.y
-		
-		dx = x1 - x0
-		dy = y1 - y0
-		
-		distance = Math.sqrt((dx * dx) + (dy * dy))
-		powerX = x0 - (dx / distance) * magnet / distance;
-		powerY = y0 - (dy / distance) * magnet / distance
-		
-		forceX = (forceX + (finalX - x0) / 2) / 2.1
-		forceY = (forceY + (finalY - y0) / 2) / 2.2
+    if (typeof argument === 'string' || argument instanceof String) {
+      if (argument.indexOf('/') === -1) {
+        switch (argument) {
+          case "light":
+          case "top":
+          case "disco":
+            socialContainer.className += " " + argument;
+            break;
 
-		
-
-		x = powerX + forceX
-		y = powerY + forceY
-	
-		return
-	this.draw = ()->
-		rotateAndPaintImage(ctx, img, r * TO_RADIANS, x, y, w / 2, h / 2, w, h)
-	return
-
-rotateAndPaintImage = ( context, image, angle , positionX, positionY, axisX, axisY, widthX, widthY)->
-	context.translate( positionX, positionY );
-	context.rotate( angle );
-	context.drawImage( image, -axisX, -axisY, widthX, widthY );
-	context.rotate( -angle );
-	context.translate( -positionX, -positionY );
-
-render = ()->
-	x = 0
-	y = 0
-	ctx.clearRect(0,0,width,height)
-	while y < grids.length
-		grids[y].draw()
-		y++
-	while x < imgs.length
-		imgs[x].update()
-		imgs[x].draw()
-		x++
-		
-	requestAnimationFrame render
-	
-	
-		
-init();
+          default:
+            message.innerHTML = argument;
+        }
+      } else {
+        var decode = argument.split("/");
+        determine(decode, links);
+      }
+    } 
+  }
+};
