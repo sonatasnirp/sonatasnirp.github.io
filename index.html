@@ -634,13 +634,13 @@ input, select, textarea {
   color: #FFF;
 }
 
-.input.message {
+figure.cnt .input.message {
   resize: none;
   height: 150px;
   padding: 10px;
 }
 
-.input.submit {
+figure.cnt .input.submit {
   background-color: #FFF;
   color: #f72f4e;
   font-size: 120%;
@@ -651,18 +651,18 @@ input, select, textarea {
   transition: all 0.1s, transform 0s 0.6s;
   transition: all 0.1s, transform 0s 0.6s, -webkit-transform 0s 0.6s;
 }
-.input.submit:active {
+figure.cnt .input.submit:active {
   margin-top: 15px;
   box-shadow: 0 0 rgba(0, 0, 0, 0.5);
 }
 
-.input.form-error {
+figure.cnt .input.form-error {
   -webkit-animation: error 0.8s ease;
           animation: error 0.8s ease;
   background: rgba(0, 0, 0, 0.7);
 }
 
-select option {
+figure.cnt select option {
   background: #f72f4e;
   color: #FFF;
   border: none;
@@ -670,20 +670,20 @@ select option {
   outline: none;
 }
 
-select option:disabled {
+figure.cnt select option:disabled {
   font-style: italic;
   color: rgba(255, 255, 255, 0.9);
   font-size: 90%;
 }
 
-.input {
+figure.cnt .input {
   -webkit-transition: -webkit-transform 0s 1s;
   transition: -webkit-transform 0s 1s;
   transition: transform 0s 1s;
   transition: transform 0s 1s, -webkit-transform 0s 1s;
 }
 
-.form-submitted .input {
+figure.cnt .form-submitted .input {
   -webkit-transform: translateX(150%);
           transform: translateX(150%);
   opacity: 0;
@@ -692,23 +692,23 @@ select option:disabled {
   transition: all 0.5s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
   transition: all 0.5s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s, -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
-.form-submitted .input:nth-child(1) {
+figure.cnt .form-submitted .input:nth-child(1) {
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
-.form-submitted .input:nth-child(2) {
+figure.cnt.form-submitted .input:nth-child(2) {
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.form-submitted .input:nth-child(3) {
+figure.cnt.form-submitted .input:nth-child(3) {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
-.form-submitted .input:nth-child(4) {
+figure.cnt.form-submitted .input:nth-child(4) {
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
 }
-.form-submitted .input:nth-child(5) {
+figure.cnt.form-submitted .input:nth-child(5) {
   -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
 }
@@ -718,7 +718,7 @@ input:-webkit-autofill {
 }
 
 @media (max-width: 600px) {
-  #form-container.expand {
+  figure.cnt #form-container.expand {
     height: 100%;
     width: 100%;
     max-width: 100%;
@@ -729,12 +729,12 @@ input:-webkit-autofill {
 
 
 
-  .icon:hover::before {
+figure.cnt  .icon:hover::before {
     -webkit-animation: none;
             animation: none;
   }
 
-  .form-overlay {
+ figure.cnt .form-overlay {
     display: none;
     -webkit-transition: none;
     transition: none;
