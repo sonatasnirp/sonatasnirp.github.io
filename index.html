@@ -148,6 +148,7 @@ a {
 .line-trough {
   text-decoration: line-through;
 }
+		/*
 .page .icon {	
   position: absolute;
   top: 0;
@@ -169,6 +170,41 @@ a {
   -moz-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
   -o-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
 }
+		*/
+/*------------------------------------------------------------------------------*/
+		
+	.page .icon:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  margin-top: -50%;
+  margin-left: -50%;
+  border-radius: 100px;
+  background-color: #1f2027;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+.page .icon:after {
+  position: relative;
+  display: block;
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: #fff;
+  font-size: 26px;
+  line-height: 66px;
+}
+		
+	/*------------------------------------------------------------------------------*/	
+		
+		
 .page#p1 .icon {
  height: 680px;
     width: 990px;
@@ -733,66 +769,6 @@ input[type=checkbox]:checked + label {
 }
 
 
-		
-		
-		.social-networks a {
-  display: block;
-  position: relative;
-  margin: 0 7px;
-  width: 68px;
-  height: 68px;
-  font-size: 0;
-  line-height: 0;
-  text-align: center;
-  text-decoration: none;
-}
-.social-networks li:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  margin-top: -50%;
-  margin-left: -50%;
-  border-radius: 100px;
-  background-color: #1f2027;
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-}
-.social-networks li:after {
-  position: relative;
-  display: block;
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  color: #fff;
-  font-size: 26px;
-  line-height: 66px;
-}
-.social-networks li:hover, .social-networks li:focus {
-  text-decoration: none;
-}
-.social-networks.spin-icon li:hover:after, .social-networks.spin-icon li:focus:after {
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-  transition: -webkit-transform 0.4s ease-out;
-  transition: transform 0.4s ease-out;
-  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
-  -webkit-transform: rotateZ(360deg);
-          transform: rotateZ(360deg);
-}
-.social-networks.square li:hover:before, .social-networks.square li:focus:before {
-  border-radius: 0;
-}
-.social-networks.bounce a:hover, .social-networks.bounce a:focus {
-  -webkit-animation: bounce 1s;
-          animation: bounce 1s;
-}
-
   
 </style></head><body>
 
@@ -817,7 +793,7 @@ input[type=checkbox]:checked + label {
 	
 
 <ul class="social-networks spin-icon">
-  <li><a href="#t1"><li class="icon-twitter" id="uno">Twitter</a></li>
+  <li><a href="https://www.twitter.com/" class="icon-twitter" id="uno">Twitter</a></li>
   <li><a href="https://www.facebook.com/" class="icon-facebook">Facebook</a></li>
   <li><a href="https://pinterest.com" class="icon-pinterest">Pinterest</a></li>
   <li><a href="https://instagram.com" class="icon-instagram">Instagram</a></li>
