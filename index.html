@@ -67,11 +67,12 @@ background: #78aca5;
 #t5:target #p1 .icon {
   -webkit-filter: blur(3px);
 }
+		/*
 .icon {
   color: #fff;
   font-size: 40px;
   display: block;
-	
+	*/
 }
 ul .icon:hover {
   opacity: 0.5;
@@ -148,7 +149,7 @@ a {
 .line-trough {
   text-decoration: line-through;
 }
-		/*
+	
 .page .icon {	
   position: absolute;
   top: 0;
@@ -170,10 +171,9 @@ a {
   -moz-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
   -o-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
 }
-		*/
 /*------------------------------------------------------------------------------*/
 		
-	.page .icon li:before {
+.icon a:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -187,7 +187,7 @@ a {
   -webkit-transition: all 400ms;
   transition: all 400ms;
 }
-.page .icon li:after {
+.icon a:after {
   position: relative;
   display: block;
   font-family: 'icomoon';
