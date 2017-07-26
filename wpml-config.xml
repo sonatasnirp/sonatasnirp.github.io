@@ -1,0 +1,131 @@
+<wpml-config>
+	
+    <custom-fields>
+
+        <custom-field action="copy">az_preloader_display</custom-field>
+        <custom-field action="copy">az_logo_navi_type_color</custom-field>
+        <custom-field action="copy">az_footer_widget_display</custom-field>
+
+        <custom-field action="copy">az_dots_menu_display</custom-field>
+        <custom-field action="copy">az_dots_menu_id_sections</custom-field>
+        <custom-field action="translate">az_dots_menu_label_sections</custom-field>
+        
+        <custom-field action="copy">az_title_header_display</custom-field>
+        <custom-field action="copy">az_title_header_hide_display</custom-field>
+        <custom-field action="copy">az_title_header_hide_color</custom-field>
+        <custom-field action="copy">az_title_header_layout</custom-field>
+        <custom-field action="copy">az_title_header_height</custom-field>
+        <custom-field action="copy">az_scroll_to_section</custom-field>
+        <custom-field action="copy">az_title_header_module</custom-field>
+
+        <custom-field action="copy">az_title_header_normal_bg_color</custom-field>
+
+        <custom-field action="copy">az_title_header_image</custom-field>
+        <custom-field action="copy">az_title_header_image_position</custom-field>
+        <custom-field action="copy">az_title_header_image_repeat</custom-field>
+        <custom-field action="copy">az_title_header_image_parallax</custom-field>
+
+        <custom-field action="copy">az_title_header_mask_mode</custom-field>
+        <custom-field action="copy">az_title_header_mask_pattern</custom-field>
+        <custom-field action="copy">az_title_header_mask_pattern_opacity</custom-field>
+        <custom-field action="copy">az_title_header_mask_background</custom-field>
+
+        <custom-field action="copy">az_animated_pattern_background_color</custom-field>
+        <custom-field action="copy">az_animated_pattern_background_image</custom-field>
+        <custom-field action="copy">az_animated_pattern_animation_moveset</custom-field>
+        <custom-field action="copy">az_animated_pattern_animation_duration</custom-field>
+
+        <custom-field action="copy">az_title_header_video_mode</custom-field>
+        <custom-field action="copy">az_title_header_video_mobile_settings</custom-field>
+        <custom-field action="copy">az_title_header_video_image</custom-field>
+        <custom-field action="copy">az_title_header_video_self_image</custom-field>
+        <custom-field action="copy">az_title_header_video_volume</custom-field>
+        <custom-field action="copy">az_title_header_video_autoplay</custom-field>
+        <custom-field action="copy">az_title_header_video_loop</custom-field>
+        <custom-field action="copy">az_title_header_video_webm</custom-field>
+        <custom-field action="copy">az_title_header_video_mp4</custom-field>
+        <custom-field action="copy">az_title_header_video_youtube_image</custom-field>
+        <custom-field action="copy">az_title_header_video_youtube_url</custom-field>
+        <custom-field action="copy">az_title_header_video_youtube_volume</custom-field>
+        <custom-field action="copy">az_title_header_video_youtube_autoplay</custom-field>
+        <custom-field action="copy">az_title_header_video_youtube_loop</custom-field>
+        <custom-field action="copy">az_title_header_video_vimeo_id</custom-field>
+        <custom-field action="copy">az_title_header_video_vimeo_volume</custom-field>
+        <custom-field action="copy">az_title_header_video_vimeo_autoplay</custom-field>
+        <custom-field action="copy">az_title_header_video_vimeo_loop</custom-field>
+
+        <custom-field action="copy">az_title_header_slider_mode</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_text_format</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_animation_type</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_autoplay</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_loop</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_slide_speed</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_slideshow_speed</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_parallax</custom-field>
+        <custom-field action="copy">az_title_header_az_slider_alias</custom-field>
+        <custom-field action="copy">az_title_header_revolution_slider_alias</custom-field>
+
+        <custom-field action="copy">az_title_header_text_display</custom-field>
+        <custom-field action="copy">az_title_header_text_format</custom-field>
+        <custom-field action="translate">az_title_header_text_heading</custom-field>
+        <custom-field action="translate">az_title_header_text_subheading</custom-field>
+
+        <custom-field action="copy">az_team_single_creative_image</custom-field>
+        <custom-field action="translate">az_team_single_creative_output_text</custom-field>
+        <custom-field action="copy">az_back_team_url_custom</custom-field>
+
+        <custom-field action="copy">az_portfolio_single_creative_image</custom-field>
+        <custom-field action="copy">az_portfolio_single_creative_gallery_image</custom-field>
+        <custom-field action="translate">az_portfolio_single_creative_output_text</custom-field>
+        <custom-field action="copy">az_portfolio_project_type</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_mode</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_image_diff</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_gallery_image</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_gallery_name</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_video_url</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_video_caption</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_gallery_video</custom-field>
+        <custom-field action="copy">az_portfolio_fancybox_video_gallery_name</custom-field>
+        <custom-field action="copy">az_portfolio_external_url</custom-field>
+        <custom-field action="copy">az_portfolio_external_url_target</custom-field>
+        <custom-field action="copy">az_colorize_project_fx</custom-field>
+        <custom-field action="copy">az_back_portfolio_url_custom</custom-field>
+
+        <custom-field action="copy">az_client_background</custom-field>
+        <custom-field action="copy">az_client_url</custom-field>
+        <custom-field action="copy">az_client_url_target</custom-field>
+
+
+        <custom-field action="translate">az_testimonial_caption</custom-field>
+        <custom-field action="translate">az_testimonial_quote</custom-field>
+
+    </custom-fields>
+
+	<custom-types>
+		<custom-type translate="1">team</custom-type>
+		<custom-type translate="1">portfolio</custom-type>
+        <custom-type translate="1">testimonial</custom-type>
+        <custom-type translate="1">client</custom-type>
+	</custom-types>
+	
+    <taxonomies>
+		<taxonomy translate="1">disciplines</taxonomy>
+		<taxonomy translate="1">attributes</taxonomy>
+		<taxonomy translate="1">project-category</taxonomy>
+		<taxonomy translate="1">project-attribute</taxonomy>
+        <taxonomy translate="1">testimonial-category</taxonomy>
+        <taxonomy translate="1">client-category</taxonomy>
+	</taxonomies>
+	
+    <admin-texts>
+		<key name="alice">
+			<key name="custom_ios_bookmark_title" />
+			<key name="left_side_header_slogan_text" />
+            <key name="footer_credits_text" />
+            <key name="error_custom_title" />
+            <key name="error_custom_subheading" />
+            <key name="error_custom_back_button" />
+		</key>
+	</admin-texts>
+
+</wpml-config>
